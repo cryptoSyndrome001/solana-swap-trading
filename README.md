@@ -1,120 +1,41 @@
-Contribution: 2019-11-01 20:00
+# Hydraswap DEX UI
 
-Contribution: 2019-11-01 20:01
+An implementation of a UI for the HydraSwap DEX.
 
-Contribution: 2019-11-02 20:00
+### Running the UI
 
-Contribution: 2019-11-02 20:01
+Run `yarn` to install dependencies, then run `yarn start` to start a development server or `yarn build` to create a production build that can be served by a static file server.
 
-Contribution: 2019-11-02 20:02
+### Collect referral fees
 
-Contribution: 2019-11-02 20:03
+If you are hosting a public UI using this codebase, you can collect referral fees when your users trade through your site.
 
-Contribution: 2019-11-02 20:04
+To do so, set the `REACT_APP_USDT_REFERRAL_FEES_ADDRESS` and `REACT_APP_USDC_REFERRAL_FEES_ADDRESS` environment variables to the addresses of your USDT and USDC SPL token accounts.
 
-Contribution: 2019-11-03 20:00
+You may want to put these in local environment files (e.g. `.env.development.local`, `.env.production.local`). See the [documentation](https://create-react-app.dev/docs/adding-custom-environment-variables) on environment variables for more information.
 
-Contribution: 2019-11-04 20:00
+NOTE: remember to re-build your app before deploying for your referral addresses to be reflected.
 
-Contribution: 2019-11-06 20:00
+### Add Trading View charts
 
-Contribution: 2019-11-06 20:01
+It is possible to add OHLCV candles built from on chain data using [Bonfida's API](https://docs.bonfida.com). Here is how to do it:
 
-Contribution: 2019-11-06 20:02
+1. Get access to the [TradingView Charting Library](https://github.com/tradingview/charting_library/) repository. This is a **private repository** and it will **return a 404 if you don't have access to it**. To get access to the repository please refer to [TradingView's website](https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/)
 
-Contribution: 2019-11-06 20:03
+2. Once you have access to the Charting Library repository:
 
-Contribution: 2019-11-06 20:04
+- Copy `charting_library` folder from https://github.com/tradingview/charting_library/ to `/public` and to `/src` folders.
+- Copy `datafeeds` folder from https://github.com/tradingview/charting_library/ to `/public`.
 
-Contribution: 2019-11-06 20:05
+3. Import `TVChartContainer` from `/src/components/TradingView` and add it to your `TradePage.tsx`. The TradingView widget will work out of the box using [Bonfida's](https://bonfida.com) datafeed.
 
-Contribution: 2019-11-06 20:06
+4. Remove the following from the `tsconfig.json`
 
-Contribution: 2019-11-09 20:00
+```json
+"./src/components/TradingView/index.tsx"
+```
 
-Contribution: 2019-11-09 20:01
+5. Uncomment the following in `public/index.html`
 
-Contribution: 2019-11-09 20:02
 
-Contribution: 2019-11-09 20:03
-
-Contribution: 2019-11-10 20:00
-
-Contribution: 2019-11-10 20:01
-
-Contribution: 2019-11-10 20:02
-
-Contribution: 2019-11-10 20:03
-
-Contribution: 2019-11-10 20:04
-
-Contribution: 2019-11-10 20:05
-
-Contribution: 2019-11-10 20:06
-
-Contribution: 2019-11-10 20:07
-
-Contribution: 2019-11-10 20:08
-
-Contribution: 2019-11-10 20:09
-
-Contribution: 2019-11-11 20:00
-
-Contribution: 2019-11-11 20:01
-
-Contribution: 2019-11-11 20:02
-
-Contribution: 2019-11-11 20:03
-
-Contribution: 2019-11-12 20:00
-
-Contribution: 2019-11-12 20:01
-
-Contribution: 2019-11-12 20:02
-
-Contribution: 2019-11-12 20:03
-
-Contribution: 2019-11-12 20:04
-
-Contribution: 2019-11-12 20:05
-
-Contribution: 2019-11-13 20:00
-
-Contribution: 2019-11-13 20:01
-
-Contribution: 2019-11-13 20:02
-
-Contribution: 2019-11-13 20:03
-
-Contribution: 2019-11-13 20:04
-
-Contribution: 2019-11-14 20:00
-
-Contribution: 2019-11-14 20:01
-
-Contribution: 2019-11-14 20:02
-
-Contribution: 2019-11-16 20:00
-
-Contribution: 2019-11-16 20:01
-
-Contribution: 2019-11-16 20:02
-
-Contribution: 2019-11-16 20:03
-
-Contribution: 2019-11-16 20:04
-
-Contribution: 2019-11-19 20:00
-
-Contribution: 2019-11-19 20:01
-
-Contribution: 2019-11-19 20:02
-
-Contribution: 2019-11-19 20:03
-
-Contribution: 2019-11-19 20:04
-
-Contribution: 2019-11-19 20:05
-
-Contribution: 2019-11-19 20:06
 
